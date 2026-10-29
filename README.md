@@ -4,6 +4,9 @@
 
 単なる静的デザイン画像ではなく、ブラウザ上で実際に動作する高品質なレスポンシブWebサイトとして開発されています。
 
+- **Vercel 公開URL（デモサイト）**: [https://maruichi-lp.vercel.app](https://maruichi-lp.vercel.app)
+- **GitHub リポジトリ**: [https://github.com/yowan-ceo/maruichi-lp](https://github.com/yowan-ceo/maruichi-lp)
+
 ---
 
 ## 1. 特徴とデザインのこだわり
