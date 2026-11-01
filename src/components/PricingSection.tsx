@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { Home, Building2, Check, AlertCircle, ShieldCheck, ArrowRight } from "lucide-react";
 import { SITE_DATA } from "@/data/siteData";
 
@@ -12,14 +11,12 @@ export const PricingSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-block px-3.5 py-1 rounded-full bg-brand-blue-100 text-brand-blue-700 text-xs sm:text-sm font-bold mb-3 tracking-wider">
-            SERVICES & PRICE
-          </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight">
             サービス内容・料金一覧
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-slate-600">
-            分かりやすく明瞭な料金体系。ご予算やご要望に合わせた柔軟なお見積りも承ります。
+          <p className="mt-4 text-sm sm:text-base text-slate-600 max-w-xl mx-auto leading-relaxed">
+            <span className="inline-block">分かりやすく明瞭な料金体系。</span>
+            <span className="inline-block">ご予算やご要望に合わせた柔軟なお見積りも承ります。</span>
           </p>
           <div className="mt-3 inline-block bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-md">
             ※表示価格はすべて税別価格です
@@ -34,27 +31,18 @@ export const PricingSection: React.FC = () => {
             <div className="space-y-6">
               
               {/* Category Header */}
-              <div className="flex items-center justify-between pb-4 border-b border-brand-blue-100">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-brand-blue-500 text-white flex items-center justify-center shadow-md">
-                    <Home className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-bold text-brand-blue-600 tracking-wide uppercase">
-                      For Residence
-                    </span>
-                    <h3 className="text-xl sm:text-2xl font-black text-slate-900">
-                      一般家庭向けサービス
-                    </h3>
-                  </div>
+              <div className="flex items-center gap-3.5 pb-4 border-b border-brand-blue-100">
+                <div className="w-12 h-12 rounded-xl bg-brand-blue-500 text-white flex items-center justify-center shadow-md shrink-0">
+                  <Home className="w-6 h-6" />
                 </div>
-                <div className="relative w-16 h-12 rounded-lg overflow-hidden hidden sm:block border border-slate-200">
-                  <Image
-                    src="/images/home.jpg"
-                    alt="一般家庭クリーニング"
-                    fill
-                    className="object-cover"
-                  />
+                <div className="min-w-0">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-black text-slate-900 leading-snug">
+                    <span className="inline-block">一般家庭向け</span>
+                    <span className="inline-block">クリーニング</span>
+                  </h3>
+                  <span className="text-xs text-slate-500 font-medium block mt-0.5">
+                    住宅・アパート・マンションの水回りやエアコン
+                  </span>
                 </div>
               </div>
 
@@ -63,33 +51,33 @@ export const PricingSection: React.FC = () => {
                 {SITE_DATA.householdServices.map((item) => (
                   <div
                     key={item.id}
-                    className="py-3.5 flex items-center justify-between gap-4 group hover:bg-white/80 px-2 rounded-lg transition-colors"
+                    className="py-3 sm:py-3.5 flex items-center justify-between gap-2.5 group hover:bg-white/80 px-2 rounded-lg transition-colors"
                   >
-                    <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 rounded-full bg-brand-blue-100 text-brand-blue-600 flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="flex items-center gap-2 flex-1 min-w-0">
+                      <div className="w-5 h-5 rounded-full bg-brand-blue-100 text-brand-blue-600 flex items-center justify-center shrink-0">
                         <Check className="w-3.5 h-3.5 stroke-[3]" />
                       </div>
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <span className="font-bold text-slate-800 text-sm sm:text-base">
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-center gap-1.5">
+                          <span className="font-bold text-slate-800 text-[13px] sm:text-base leading-snug">
                             {item.name}
                           </span>
                           {item.popular && (
-                            <span className="bg-red-500 text-white text-[10px] font-black px-1.5 py-0.2 rounded">
+                            <span className="bg-red-500 text-white text-[10px] font-black px-1.5 py-0.2 rounded shrink-0">
                               一番人気
                             </span>
                           )}
                         </div>
                         {item.note && (
-                          <span className="block text-xs text-slate-500 mt-0.5 font-medium">
+                          <span className="block text-[11px] sm:text-xs text-slate-500 mt-0.5 font-medium">
                             {item.note}
                           </span>
                         )}
                       </div>
                     </div>
 
-                    <div className="text-right shrink-0">
-                      <span className="text-lg sm:text-xl font-black text-brand-blue-700 tracking-tight">
+                    <div className="text-right shrink-0 whitespace-nowrap pl-2">
+                      <span className="text-base sm:text-xl font-black text-brand-blue-700 tracking-tight">
                         {item.price}
                       </span>
                       <span className="block text-[10px] text-slate-400">（税別）</span>
@@ -126,27 +114,18 @@ export const PricingSection: React.FC = () => {
             <div className="space-y-6">
               
               {/* Category Header */}
-              <div className="flex items-center justify-between pb-4 border-b border-slate-200">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-brand-navy text-white flex items-center justify-center shadow-md">
-                    <Building2 className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-bold text-brand-navy tracking-wide uppercase">
-                      For Business & Office
-                    </span>
-                    <h3 className="text-xl sm:text-2xl font-black text-slate-900">
-                      店舗・法人向けサービス
-                    </h3>
-                  </div>
+              <div className="flex items-center gap-3.5 pb-4 border-b border-slate-200">
+                <div className="w-12 h-12 rounded-xl bg-brand-navy text-white flex items-center justify-center shadow-md shrink-0">
+                  <Building2 className="w-6 h-6" />
                 </div>
-                <div className="relative w-16 h-12 rounded-lg overflow-hidden hidden sm:block border border-slate-200">
-                  <Image
-                    src="/images/business.jpg"
-                    alt="業務用クリーニング"
-                    fill
-                    className="object-cover"
-                  />
+                <div className="min-w-0">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-black text-slate-900 leading-snug">
+                    <span className="inline-block">店舗・法人向け</span>
+                    <span className="inline-block">クリーニング</span>
+                  </h3>
+                  <span className="text-xs text-slate-500 font-medium block mt-0.5">
+                    飲食店・クリニック・オフィス・施設全般
+                  </span>
                 </div>
               </div>
 
@@ -155,33 +134,33 @@ export const PricingSection: React.FC = () => {
                 {SITE_DATA.businessServices.map((item) => (
                   <div
                     key={item.id}
-                    className="py-3.5 flex items-center justify-between gap-4 group hover:bg-white/80 px-2 rounded-lg transition-colors"
+                    className="py-3 sm:py-3.5 flex items-center justify-between gap-2.5 group hover:bg-white/80 px-2 rounded-lg transition-colors"
                   >
-                    <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="flex items-center gap-2 flex-1 min-w-0">
+                      <div className="w-5 h-5 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center shrink-0">
                         <Check className="w-3.5 h-3.5 stroke-[3]" />
                       </div>
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <span className="font-bold text-slate-800 text-sm sm:text-base">
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-center gap-1.5">
+                          <span className="font-bold text-slate-800 text-[13px] sm:text-base leading-snug">
                             {item.name}
                           </span>
                           {item.popular && (
-                            <span className="bg-brand-blue-600 text-white text-[10px] font-black px-1.5 py-0.2 rounded">
+                            <span className="bg-brand-blue-600 text-white text-[10px] font-black px-1.5 py-0.2 rounded shrink-0">
                               定期需要No.1
                             </span>
                           )}
                         </div>
                         {item.note && (
-                          <span className="block text-xs text-slate-500 mt-0.5 font-medium">
+                          <span className="block text-[11px] sm:text-xs text-slate-500 mt-0.5 font-medium">
                             {item.note}
                           </span>
                         )}
                       </div>
                     </div>
 
-                    <div className="text-right shrink-0">
-                      <span className="text-lg sm:text-xl font-black text-brand-navy tracking-tight">
+                    <div className="text-right shrink-0 whitespace-nowrap pl-2">
+                      <span className="text-base sm:text-xl font-black text-brand-navy tracking-tight">
                         {item.price}
                       </span>
                       <span className="block text-[10px] text-slate-400">（税別）</span>
@@ -226,15 +205,12 @@ export const PricingSection: React.FC = () => {
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-brand-yellow tracking-wider">
-                    CLEAN & SAFE TECHNOLOGY
-                  </span>
                   <h3 className="text-xl sm:text-2xl font-black">
                     {SITE_DATA.disinfectionInfo.title}
                   </h3>
                 </div>
               </div>
-              <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-brand-blue-200">
+              <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-brand-blue-200 self-start sm:self-auto">
                 公式サイト掲載の安心施工工程
               </span>
             </div>

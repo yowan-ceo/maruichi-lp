@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { AlertTriangle, CheckCircle, ArrowRight } from "lucide-react";
 
 export const ProblemsSection: React.FC = () => {
@@ -31,13 +30,14 @@ export const ProblemsSection: React.FC = () => {
             <span>こんなお悩みはありませんか？</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight">
-            ご自宅のエアコン、<br />
-            <span className="text-red-600 underline decoration-red-300 underline-offset-8">
+            <span className="inline-block">ご自宅のエアコン、</span><br className="sm:hidden" />
+            <span className="text-red-600 underline decoration-red-300 underline-offset-8 inline-block mt-1 sm:mt-0">
               1〜2年お手入れしないと…
             </span>
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-slate-600">
-            外見はきれいに見えても、エアコンの内部には思っている以上にホコリや湿気が潜んでいます。
+          <p className="mt-4 text-sm sm:text-base text-slate-600 max-w-xl mx-auto leading-relaxed">
+            <span className="inline-block">外見はきれいに見えても、</span>
+            <span className="inline-block">エアコンの内部には思っている以上にホコリや湿気が潜んでいます。</span>
           </p>
         </div>
 
@@ -46,29 +46,29 @@ export const ProblemsSection: React.FC = () => {
           
           {/* Photo: actual dirty AC from official site */}
           <div className="lg:col-span-6">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-100 group">
-              <div className="relative h-64 sm:h-80 md:h-96 w-full">
-                <Image
+            <div className="relative rounded-2xl overflow-hidden shadow-xl border-2 border-slate-200 group bg-slate-900">
+              <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="/images/care.jpg"
                   alt="埃とカビだらけのエアコン内部の写真"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-500"
                 />
               </div>
               
-              <div className="absolute top-4 left-4 bg-red-600/90 text-white text-xs font-bold px-3 py-1.5 rounded-md shadow-md backdrop-blur-xs flex items-center gap-1.5">
+              <div className="absolute top-3 left-3 bg-red-600/90 text-white text-xs font-bold px-3 py-1.5 rounded-md shadow-md flex items-center gap-1.5">
                 <AlertTriangle className="w-4 h-4 text-yellow-300" />
-                <span>実際のエアコン内部の様子</span>
+                <span>実際のエアコン内部（公式記録写真）</span>
               </div>
 
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 sm:p-6 text-white">
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-4 sm:p-5 text-white">
                 <p className="text-xs sm:text-sm font-medium leading-relaxed">
-                  表面のフィルターを洗うだけでは、奥の熱交換器や送風口に付着した頑固な汚れは落とせません。
+                  フィルターを洗うだけでは届かない奥の熱交換器やファンに、黒カビが繁殖します。
                 </p>
               </div>
             </div>
             <p className="text-center text-xs text-slate-400 mt-2">
-              ※放置された家庭用エアコンの内部状況（実例写真）
+              ※放置されたエアコン内部の汚れ実例（公式サイトより）
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export const ProblemsSection: React.FC = () => {
             {problems.map((prob, idx) => (
               <div
                 key={idx}
-                className="p-5 sm:p-6 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-brand-blue-300 hover:bg-brand-blue-50/30 transition-all shadow-sm"
+                className="p-5 sm:p-6 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-blue-300 hover:bg-brand-blue-50/30 transition-all shadow-sm"
               >
                 <div className="flex items-start gap-3.5">
                   <div className="w-8 h-8 rounded-full bg-red-500/10 text-red-600 flex items-center justify-center shrink-0 font-bold text-sm mt-0.5">

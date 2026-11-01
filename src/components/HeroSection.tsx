@@ -7,65 +7,72 @@ import { SITE_DATA } from "@/data/siteData";
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-brand-blue-50/70 via-white to-brand-blue-50/30 pt-6 pb-16 lg:pt-12 lg:pb-24">
-      {/* Background graphic elements - subtle water/air curves */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-brand-blue-50/70 via-white to-brand-blue-50/30 pt-6 pb-14 lg:pt-10 lg:pb-20">
+      {/* Background graphic elements */}
       <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-96 h-96 bg-brand-blue-200/40 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 translate-y-12 -translate-x-12 w-80 h-80 bg-brand-blue-100/60 rounded-full blur-2xl pointer-events-none" />
       <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* Left Column: Catchphrase & CTA */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             {/* Area & Quality Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-blue-100/80 border border-brand-blue-300/60 text-brand-blue-800 text-xs sm:text-sm font-semibold tracking-wide shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-blue-100/90 border border-brand-blue-300/60 text-brand-blue-800 text-xs sm:text-sm font-semibold tracking-wide shadow-sm">
               <Sparkles className="w-4 h-4 text-brand-blue-600 animate-pulse" />
               <span>福井市・坂井市を中心に福井県全域対応</span>
             </div>
 
             {/* Main Catchphrase */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-black text-slate-900 leading-[1.25] tracking-tight">
-              福井県の<br className="hidden sm:inline" />
-              <span className="text-brand-blue-600 inline-block">エアコン・店舗清掃</span>なら、<br />
-              <span className="relative inline-block mt-1">
-                <span className="relative z-10 text-brand-navy whitespace-nowrap">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] font-black text-slate-900 leading-[1.3] tracking-tight">
+              <span className="inline-block">福井県の</span>
+              <span className="inline-block text-brand-blue-600">エアコン・店舗清掃</span>なら、<br />
+              <span className="relative inline-block mt-1 sm:mt-1.5">
+                <span className="relative z-10 text-brand-navy">
                   地域最安値 × 最丁寧
                 </span>
                 <span className="absolute bottom-1.5 left-0 right-0 h-3 bg-brand-yellow/60 -z-0 rounded" />
               </span>
-              を<br className="sm:hidden" />目指すマルイチへ。
+              <span className="inline-block">を目指す</span><br />
+              <span className="inline-block text-brand-blue-600">マルイチへ。</span>
             </h1>
 
             {/* Sub Catchphrase */}
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              {SITE_DATA.company.subCatchphrase}
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
+              <span className="inline-block">福井県を中心に、</span>
+              <span className="inline-block">ご家庭から店舗・オフィスまで幅広く対応。</span><br className="hidden sm:inline" />
+              <span className="inline-block">エアコンや換気扇、</span>
+              <span className="inline-block">床、ソファなど、</span>
+              <span className="inline-block">さまざまな場所のクリーニングを丁寧に行います。</span>
             </p>
 
             {/* Campaign Banner / Badge */}
             <div className="relative p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-50 to-yellow-100/80 border-2 border-brand-yellow shadow-sm max-w-xl mx-auto lg:mx-0 text-left">
               <div className="flex flex-col sm:flex-row items-center gap-4">
-                <div className="relative w-full sm:w-36 h-24 shrink-0 rounded-xl overflow-hidden border border-yellow-300 shadow-inner">
+                <div className="relative w-full sm:w-36 h-28 sm:h-24 shrink-0 rounded-xl overflow-hidden border border-yellow-300 shadow-inner bg-slate-900">
                   <Image
                     src="/images/campaign.jpg"
                     alt={SITE_DATA.campaign.title}
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute top-1 left-1 bg-red-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
+                  <div className="absolute top-1.5 left-1.5 bg-red-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded shadow">
                     割引中
                   </div>
                 </div>
 
-                <div className="flex-1 space-y-1">
-                  <div className="flex items-center gap-2">
+                <div className="flex-1 space-y-1 text-center sm:text-left">
+                  <div className="flex items-center justify-center sm:justify-start gap-2">
                     <span className="bg-brand-orange text-white text-[11px] font-extrabold px-2 py-0.5 rounded-full">
                       {SITE_DATA.campaign.badge}
                     </span>
                   </div>
-                  <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 leading-snug">
-                    家庭用エアコンクリーニング{" "}
-                    <span className="text-red-600 text-2xl font-black">1,000円OFF!</span>
+                  <h2 className="text-base sm:text-lg lg:text-xl font-extrabold text-slate-900 leading-snug">
+                    <span className="inline-block">家庭用エアコンクリーニング</span>{" "}
+                    <span className="inline-block text-red-600 text-xl sm:text-2xl font-black whitespace-nowrap">
+                      1,000円OFF!
+                    </span>
                   </h2>
                   <p className="text-xs text-slate-500 leading-normal">
                     {SITE_DATA.campaign.note}
@@ -132,89 +139,89 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Asymmetric Cleaning Photos Collage */}
-          <div className="lg:col-span-5 relative mt-6 lg:mt-0">
-            <div className="relative max-w-md mx-auto">
+          {/* Right Column: Balanced Cleaning Photos Grid (Cleanly Contained) */}
+          <div className="lg:col-span-5 relative mt-6 lg:mt-0 w-full">
+            <div className="relative max-w-md mx-auto bg-white p-3 rounded-3xl shadow-xl border border-brand-blue-100 overflow-hidden">
               
-              {/* Decorative background shape */}
-              <div className="absolute -inset-4 bg-gradient-to-tr from-brand-blue-100 to-cyan-50 rounded-3xl transform rotate-2 -z-10 shadow-lg border border-brand-blue-200/50" />
-
               {/* Grid of actual photos */}
-              <div className="grid grid-cols-2 gap-3 p-3 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-slate-100">
+              <div className="grid grid-cols-2 gap-2.5">
                 
-                {/* Photo 1: Air conditioner deep high-pressure cleaning */}
-                <div className="relative h-44 sm:h-52 rounded-xl overflow-hidden group shadow-sm">
-                  <Image
+                {/* Photo 1: AC cleaning action */}
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 group shadow-sm">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src="/images/worker-ac.jpg"
                     alt="エアコン高圧分解洗浄の施工風景"
-                    fill
-                    priority
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-2.5">
-                    <span className="text-white text-xs font-bold bg-brand-blue-600/90 px-2 py-0.5 rounded backdrop-blur-xs">
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent p-2">
+                    <span className="text-white text-[11px] font-bold block">
                       エアコン高圧洗浄
                     </span>
                   </div>
                 </div>
 
-                {/* Photo 2: Home range hood cleaning */}
-                <div className="relative h-44 sm:h-52 rounded-xl overflow-hidden group shadow-sm">
-                  <Image
+                {/* Photo 2: Home range hood */}
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 group shadow-sm">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src="/images/home.jpg"
                     alt="一般家庭向け換気扇・キッチンクリーニング"
-                    fill
-                    priority
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-2.5">
-                    <span className="text-white text-xs font-bold bg-brand-navy/90 px-2 py-0.5 rounded backdrop-blur-xs">
-                      家庭用キッチン・水回り
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent p-2">
+                    <span className="text-white text-[11px] font-bold block">
+                      家庭用キッチン
                     </span>
                   </div>
                 </div>
 
-                {/* Photo 3: Clinic Sofa Cleaning */}
-                <div className="relative h-44 sm:h-52 rounded-xl overflow-hidden group shadow-sm">
-                  <Image
+                {/* Photo 3: Sofa cleaning action */}
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 group shadow-sm">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src="/images/worker-sofa.jpg"
                     alt="クリニック布ソファの専用機材バキューム清掃"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-2.5">
-                    <span className="text-white text-xs font-bold bg-brand-navy/90 px-2 py-0.5 rounded backdrop-blur-xs">
-                      布ソファ専用洗浄
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent p-2">
+                    <span className="text-white text-[11px] font-bold block">
+                      布ソファ洗浄
                     </span>
                   </div>
                 </div>
 
                 {/* Photo 4: Restaurant kitchen floor */}
-                <div className="relative h-44 sm:h-52 rounded-xl overflow-hidden group shadow-sm">
-                  <Image
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 group shadow-sm">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src="/images/result01.jpg"
                     alt="飲食店厨房の床・換気設備クリーニング"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-2.5">
-                    <span className="text-white text-xs font-bold bg-brand-blue-600/90 px-2 py-0.5 rounded backdrop-blur-xs">
-                      店舗・厨房クリーニング
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent p-2">
+                    <span className="text-white text-[11px] font-bold block">
+                      店舗・厨房清掃
                     </span>
                   </div>
                 </div>
 
               </div>
 
-              {/* Floating badge */}
-              <div className="absolute -bottom-4 -left-4 sm:-left-6 bg-white py-2.5 px-4 rounded-xl shadow-lg border border-brand-blue-100 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-brand-yellow/30 flex items-center justify-center font-black text-amber-700 text-lg">
-                  福井
+              {/* Contained bottom banner (No overflowing negative margins) */}
+              <div className="mt-2.5 py-2 px-3 rounded-xl bg-brand-blue-50 border border-brand-blue-200/80 flex items-center justify-between text-left">
+                <div className="flex items-center gap-2">
+                  <span className="w-7 h-7 rounded-lg bg-brand-blue-500 text-white font-black text-xs flex items-center justify-center">
+                    福井
+                  </span>
+                  <div>
+                    <span className="text-[10px] text-slate-500 font-semibold block">地域密着サポート</span>
+                    <span className="text-xs font-bold text-slate-900">福井市・坂井市対応</span>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-[11px] font-bold text-slate-500">地域密着サポート</div>
-                  <div className="text-sm font-extrabold text-slate-900">迅速＆親身な対応</div>
-                </div>
+                <span className="text-xs font-bold text-brand-blue-700 bg-white px-2.5 py-1 rounded-md border border-brand-blue-200">
+                  お見積り完全無料
+                </span>
               </div>
 
             </div>

@@ -18,18 +18,18 @@ export const CtaSection: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             
             {/* Left Column: Guiding Concierge Photo */}
-            <div className="lg:col-span-5 relative flex justify-center bg-gradient-to-b from-brand-blue-50/50 to-white pt-6 lg:pt-0">
-              <div className="relative w-full max-w-sm sm:max-w-md h-[380px] sm:h-[450px] lg:h-[480px] flex items-end justify-center">
+            <div className="lg:col-span-5 relative flex justify-center bg-gradient-to-b from-brand-blue-50/40 to-white pt-6 lg:pt-0">
+              <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-md h-[280px] sm:h-[360px] lg:h-[440px] flex items-end justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/cta-concierge.jpg"
                   alt="お見積りをご案内するカスタマーコンシェルジュ"
                   loading="eager"
-                  className="max-h-full w-auto object-contain object-bottom drop-shadow-md select-none"
+                  className="max-h-full w-auto max-w-full object-contain object-bottom drop-shadow-md select-none"
                 />
 
                 {/* Subtle photo caption badge */}
-                <div className="absolute bottom-3 left-4 bg-white/90 backdrop-blur-xs text-[10px] text-slate-500 px-2 py-0.5 rounded shadow-sm border border-slate-200">
+                <div className="absolute bottom-2 left-3 bg-white/90 backdrop-blur-xs text-[10px] text-slate-500 px-2 py-0.5 rounded shadow-sm border border-slate-200">
                   ※リニューアル提案用イメージ
                 </div>
               </div>
@@ -46,12 +46,15 @@ export const CtaSection: React.FC = () => {
 
               {/* Main CTA Copy */}
               <div className="space-y-2">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-black text-slate-900 leading-tight tracking-tight">
-                  まずは無料でお見積もりください
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[38px] font-black text-slate-900 leading-tight tracking-tight">
+                  <span className="inline-block">まずは無料で</span>
+                  <span className="inline-block text-brand-orange">お見積もりください</span>
                 </h2>
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                  ご家庭のエアコン・水回り清掃から、店舗やオフィスの定期メンテナンスまで。<br className="hidden sm:inline" />
-                  気になる汚れやお悩みについて、まずはお気軽にご相談ください。
+                  <span className="inline-block">ご家庭のエアコン・水回り清掃から、</span>
+                  <span className="inline-block">店舗やオフィスの定期メンテナンスまで。</span><br className="hidden sm:inline" />
+                  <span className="inline-block">気になる汚れやお悩みについて、</span>
+                  <span className="inline-block">まずはお気軽にご相談ください。</span>
                 </p>
               </div>
 

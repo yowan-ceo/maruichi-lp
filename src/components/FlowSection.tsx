@@ -13,14 +13,12 @@ export const FlowSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-block px-3.5 py-1 rounded-full bg-brand-blue-100 text-brand-blue-700 text-xs sm:text-sm font-bold mb-3 tracking-wider">
-            WORK PROCESS
-          </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight">
             クリーニングまでの流れ
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-slate-600">
-            ご相談から施工完了まで、明朗で安心の4ステップです。
+          <p className="mt-4 text-sm sm:text-base text-slate-600 max-w-xl mx-auto leading-relaxed">
+            <span className="inline-block">ご相談から施工完了まで、</span>
+            <span className="inline-block">明朗で安心の4ステップです。</span>
           </p>
         </div>
 
@@ -46,7 +44,7 @@ export const FlowSection: React.FC = () => {
                 {/* Content */}
                 <div className="space-y-3 flex-1">
                   <div className="inline-block bg-brand-blue-100/80 text-brand-blue-800 text-[11px] font-bold px-2 py-0.5 rounded">
-                    STEP {item.step}
+                    ステップ {item.step}
                   </div>
                   <h3 className="text-base sm:text-lg font-black text-slate-900 leading-snug">
                     {item.title}

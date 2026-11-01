@@ -72,14 +72,12 @@ export const ContactSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-block px-3.5 py-1 rounded-full bg-brand-blue-100 text-brand-blue-700 text-xs sm:text-sm font-bold mb-3 tracking-wider">
-            CONTACT FORM
-          </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight">
             お問い合わせ・無料お見積り
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-slate-600">
-            清掃のご相談や現場調査のお申し込みは、下記フォームよりお気軽にご連絡ください。
+          <p className="mt-4 text-sm sm:text-base text-slate-600 max-w-xl mx-auto leading-relaxed">
+            <span className="inline-block">清掃のご相談や現場調査のお申し込みは、</span>
+            <span className="inline-block">下記フォームよりお気軽にご連絡ください。</span>
           </p>
         </div>
 

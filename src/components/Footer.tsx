@@ -54,8 +54,8 @@ export const Footer: React.FC = () => {
 
           {/* Quick Links Column */}
           <div className="md:col-span-3 space-y-3">
-            <h4 className="text-white font-bold text-sm tracking-wider uppercase border-l-2 border-brand-blue-500 pl-2.5">
-              NAVIGATION
+            <h4 className="text-white font-bold text-sm tracking-wider border-l-2 border-brand-blue-500 pl-2.5">
+              サイトメニュー
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
@@ -88,8 +88,8 @@ export const Footer: React.FC = () => {
 
           {/* Compliance & Official Link Column */}
           <div className="md:col-span-4 space-y-3">
-            <h4 className="text-white font-bold text-sm tracking-wider uppercase border-l-2 border-brand-blue-500 pl-2.5">
-              OFFICIAL & POLICY
+            <h4 className="text-white font-bold text-sm tracking-wider border-l-2 border-brand-blue-500 pl-2.5">
+              公式情報・ポリシー
             </h4>
             <p className="text-xs text-slate-400 leading-relaxed">
               本ページに掲載されているサービス名、施工料金、会社概要、施工実績写真は、公式サイトの正確な公開情報に基づき構成されています。

@@ -1,9 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { DollarSign, Sparkles, Building2, Check } from "lucide-react";
-import { SITE_DATA } from "@/data/siteData";
 
 export const ReasonsSection: React.FC = () => {
   const cards = [
@@ -26,6 +24,7 @@ export const ReasonsSection: React.FC = () => {
       subtitle: "細部の隙間まで徹底清掃",
       icon: Sparkles,
       image: "/images/worker-ac.jpg",
+      imagePosition: "object-[center_15%]",
       points: [
         "高圧洗浄機＋専用薬剤による徹底洗浄",
         "機械が届かない隙間や角は手作業で仕上げ",
@@ -37,8 +36,8 @@ export const ReasonsSection: React.FC = () => {
       num: "03",
       title: "家庭から法人まで幅広く対応",
       subtitle: "豊富な施工実績と柔軟な体制",
-      image: "/images/worker-sofa.jpg",
-      icon: Building2,
+      image: "/images/business.jpg",
+      imagePosition: "object-center",
       points: [
         "一般住宅の水回り・エアコン1台から歓迎",
         "飲食店厨房・クリニック・オフィス等の定期清掃",
@@ -54,41 +53,38 @@ export const ReasonsSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-block px-3.5 py-1 rounded-full bg-brand-blue-100 text-brand-blue-700 text-xs sm:text-sm font-bold mb-3 tracking-wider">
-            WHY CHOOSE US
-          </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight">
-            ホームクリーニング マルイチが<br />
-            <span className="text-brand-blue-600">選ばれる3つの理由</span>
+            <span className="inline-block">ホームクリーニング マルイチが</span><br className="sm:hidden" />
+            <span className="text-brand-blue-600 inline-block mt-1 sm:mt-0">選ばれる3つの理由</span>
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-slate-600">
-            福井市・坂井市を中心に、確かな技術と誠実な価格で地域の皆様に選ばれています。
+          <p className="mt-4 text-sm sm:text-base text-slate-600 max-w-xl mx-auto leading-relaxed">
+            <span className="inline-block">福井市・坂井市を中心に、</span>
+            <span className="inline-block">確かな技術と誠実な価格で地域の皆様に選ばれています。</span>
           </p>
         </div>
 
         {/* 3 Columns Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {cards.map((card, idx) => {
-            const Icon = card.icon;
             return (
               <div
                 key={idx}
                 className="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col group"
               >
                 {/* Image & Number Badge */}
-                <div className="relative h-48 w-full overflow-hidden bg-slate-100">
-                  <Image
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={card.image}
                     alt={card.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className={`w-full h-full object-cover ${card.imagePosition || "object-center"} group-hover:scale-105 transition-transform duration-500`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/25 to-transparent" />
                   
                   {/* Number Badge */}
-                  <div className="absolute top-4 left-4 bg-brand-blue-600 text-white font-black text-sm px-3 py-1 rounded-lg shadow-md flex items-center gap-1.5">
-                    <span>REASON</span>
-                    <span className="text-brand-yellow font-extrabold text-base">{card.num}</span>
+                  <div className="absolute top-3.5 left-3.5 bg-brand-blue-600 text-white font-black text-xs px-2.5 py-1 rounded-md shadow-md flex items-center gap-1">
+                    <span>理由</span>
+                    <span className="text-brand-yellow font-extrabold text-sm">{card.num}</span>
                   </div>
 
                   <div className="absolute bottom-3 left-4 right-4 text-white">
